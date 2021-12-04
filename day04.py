@@ -5,7 +5,7 @@ numbers=map(int,lines[0].split(","))
 posis={}
 fields=[]
 fields_s=[]
-win_boards=[]
+win_fields=[]
 win_msum=[]
 
 def check_win(n):
@@ -31,11 +31,11 @@ for i in range(len(lines)//6):
 
 
 for n in numbers:
-    for po in posis[n]:
-        fields_s[po[0]][po[2]][po[1]]=0
-        if po[0] not in win_boards and check_win(po[0]):
-            win_boards.append(po[0])
-            win_msum.append(n*unmarked_sum(po[0]))
+    for field,x,y in posis[n]:
+        fields_s[field][y][x]=0
+        if field not in win_fields and check_win(field):
+            win_fields.append(field)
+            win_msum.append(n*unmarked_sum(field))
 
 print(win_msum[0])
 print(win_msum[-1])
