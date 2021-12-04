@@ -17,6 +17,7 @@ for bit in [True,False]:
         lines=list(filter(lambda x:int(x[i])==choosen_bitstate,lines))
         i+=1
     mu*=int(lines[0],2)
+    
 print(mu)
             
         
