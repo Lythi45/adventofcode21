@@ -1,4 +1,3 @@
-from numpy.core.overrides import verify_matching_signatures
 for modus in range(2):
     vents={}
     for line in open("input05.txt","r").readlines():
