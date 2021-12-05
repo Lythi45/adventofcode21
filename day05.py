@@ -4,14 +4,12 @@ for modus in range(2):
     for line in open("input05.txt","r").readlines():
         (x1,y1),(x2,y2)=list(map(lambda x:list(map(int,x.split(","))),line.split(" -> ")))
         if x1==x2:
-            if y1>y2:
-                y1,y2=y2,y1
-            for y in range(y1,y2+1):
+            ry=[1,-1][y1>y2]
+            for y in range(y1,y2+ry,ry):
                 vents[(x1,y)]=vents.get((x1,y),0)+1
         elif y1==y2:
-            if x1>x2:
-                x1,x2=x2,x1
-            for x in range(x1,x2+1):
+            rx=[1,-1][x1>x2]
+            for x in range(x1,x2+rx,rx):
                 vents[(x,y1)]=vents.get((x,y1),0)+1
         elif modus==1:
             rx=[1,-1][x1>x2]
