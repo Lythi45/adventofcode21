@@ -1,7 +1,7 @@
 for modus in range(2):
     vents={}
     for line in open("input05.txt","r").readlines():
-        (x1,y1),(x2,y2)=list(map(lambda x:list(map(int,x.split(","))),line.split(" -> ")))
+        (x1,y1),(x2,y2)=map(lambda x:map(int,x.split(",")),line.split(" -> "))
         if x1==x2:
             ry=[1,-1][y1>y2]
             for y in range(y1,y2+ry,ry):
