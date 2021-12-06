@@ -10,7 +10,7 @@ for i in range(256):
     for j in range(9):
         fishes[j]=fishes[j+1]
     fishes[9]=0
-    if i==80:
+    if i==80-1:
         print(sum(fishes.values()))
 print(sum(fishes.values()))
 
